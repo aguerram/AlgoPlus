@@ -1,0 +1,13 @@
+Algorithme Hellos
+Constantes
+PI = 3.14;
+Variables
+	a,ssd,cc,aa:Entier
+	c:Reel
+	nam:Chaine
+	bool:Booleen
+Debut
+	nam<-" Mostafa";
+	c<-5.66;
+	Ecrire("\na = ",nam+" pm "+" Aguerram  "," c = ",c);
+Fin

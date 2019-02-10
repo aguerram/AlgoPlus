@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainController">
+   <center>
+      <SplitPane dividerPositions="0.7359050445103857" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.27638190954773867" layoutX="112.0" layoutY="56.0" prefHeight="272.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxWidth="300.0" minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="116.0" style="-fx-background-color: #dcdcdc;">
+                           <children>
+                              <TitledPane prefHeight="390.0" prefWidth="217.0" text="Project Explorer" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #dcdcdc;">
+                                       <children>
+                                          <TreeView fx:id="treeProjectExplorer" prefHeight="364.0" prefWidth="215.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="458.0">
+                           <children>
+                              <TabPane fx:id="tabPaneMain" layoutX="28.0" prefHeight="390.0" prefWidth="574.0" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <BorderPane fx:id="panelFooter" layoutX="83.0" layoutY="-53.0" prefHeight="94.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <Pane fx:id="panelHelpersButton" prefHeight="77.0" prefWidth="54.0" style="-fx-background-color: #dcdcdc;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="buttonStopExecution" layoutX="7.0" layoutY="2.0" mnemonicParsing="false" onAction="#stopExecution" styleClass="btn" />
+                              <Button fx:id="buttonClearConsole" layoutX="7.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#clearConsoleText" styleClass="btn" />
+                           </children>
+                        </Pane>
+                     </left>
+                     <center>
+                        <TabPane fx:id="bottomTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                          <tabs>
+                            <Tab text="Console">
+                                 <content>
+                                    <TextArea fx:id="textRunTime" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: transparent;">
+                                       <contextMenu>
+                                          <ContextMenu fx:id="textRunContextMenu">
+                                            <items>
+                                              <MenuItem fx:id="textRunContextMenuCopy" mnemonicParsing="false" text="Copy">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="COPY" />
+                                                   </graphic>
+                                                   <accelerator>
+                                                      <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                   </accelerator>
+                                                </MenuItem>
+                                                <MenuItem fx:id="textRunContextMenuPaste" mnemonicParsing="false" text="Paste">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="CLIPBOARD" />
+                                                   </graphic>
+                                                   <accelerator>
+                                                      <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                   </accelerator>
+                                                </MenuItem>
+                                                <SeparatorMenuItem mnemonicParsing="false" />
+                                                <MenuItem fx:id="textRunContextMenuClear" mnemonicParsing="false" text="Clear">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="TRASH" />
+                                                   </graphic>
+                                                   <accelerator>
+                                                      <KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                                   </accelerator>
+                                                </MenuItem>
+                                            </items>
+                                          </ContextMenu>
+                                       </contextMenu></TextArea>
+                                 </content>
+                              </Tab>
+                            <Tab text="Log">
+                                 <content>
+                                    <TableView fx:id="logTableView" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                                      <columns>
+                                        <TableColumn fx:id="logTableViewLineCol" editable="false" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" resizable="false" text="Line" />
+                                        <TableColumn fx:id="logTableViewColonneCol" editable="false" maxWidth="60.0" minWidth="60.0" prefWidth="60.0" resizable="false" text="Colonne" />
+                                          <TableColumn fx:id="logTableViewFileCol" editable="false" prefWidth="200.0" text="File" />
+                                          <TableColumn fx:id="logTableViewMessageCol" editable="false" maxWidth="4000.0" minWidth="200.0" prefWidth="400.0" text="Message" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </content>
+                              </Tab>
+                          </tabs>
+                        </TabPane>
+                     </center>
+                     <bottom>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="798.0" spacing="32.0" style="-fx-background-color: #dcdcdc;" BorderPane.alignment="TOP_RIGHT">
+                           <children>
+                              <Label fx:id="labelLines" text="Label" textFill="WHITE" />
+                              <JFXProgressBar fx:id="runningProgressBar" prefHeight="0.0" prefWidth="193.0">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </JFXProgressBar>
+                              <Label fx:id="TimeToken" />
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <top>
+      <BorderPane prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <top>
+            <MenuBar fx:id="menuMain" style="-fx-background-color: #dcdcdc; -fx-fill-color: white;" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu fx:id="fileMainMenu" mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="newFileFileMenu" mnemonicParsing="false" onAction="#newFileFileMenu" text="New File">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="newProjectFileMenu" mnemonicParsing="false" text="New Project">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="openFileFileMenu" mnemonicParsing="false" onAction="#openFile" text="Open File">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="openFolderFileMenu" mnemonicParsing="false" text="Open Folder" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="saveFileFileMenu" mnemonicParsing="false" text="Save">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveAsFileFileMenu" mnemonicParsing="false" text="Sava as...">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="quitFileMenu" mnemonicParsing="false" onAction="#quitApplication" text="Quit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Undo">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Redo">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Copy">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Paste">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="V" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Delete">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="UP" shortcut="ANY" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Delete line">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="DELETE" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Find">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Find &amp; Replace">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Exécuter">
+                     <items>
+                        <MenuItem fx:id="menuMainRunRun" mnemonicParsing="false" text="Compile &amp; Run">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="menuMainRunRun1" mnemonicParsing="false" text="Compile">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F9" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="menuMainRunRun11" mnemonicParsing="false" text="Run">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="F10" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                     </items>
+                </Menu>
+                  <Menu fx:id="settingMainMenu" mnemonicParsing="false" text="Paramètres">
+                    <items>
+                        <CheckMenuItem mnemonicParsing="false" text="Auto save" />
+                        <Menu mnemonicParsing="false" text="Language">
+                          <items>
+                              <RadioMenuItem mnemonicParsing="false" text="English" />
+                              <RadioMenuItem mnemonicParsing="false" text="Frensh" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <CheckMenuItem mnemonicParsing="false" text="Show project Explorer" />
+                              <CheckMenuItem mnemonicParsing="false" text="Show toolbar" />
+                           </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+                  <Menu fx:id="helpMainMenu" mnemonicParsing="false" text="Aidez-moi">
+                    <items>
+                      <MenuItem fx:id="aboutMeHelpMenu" mnemonicParsing="false" onAction="#openAboutMenu" text="About Me" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #dcdcdc;" BorderPane.alignment="CENTER">
+              <items>
+                <Button fx:id="NewFileNav" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Button fx:id="OpenFileNav" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Button fx:id="SaveFileNav" layoutX="76.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Button fx:id="CloseAllNav" layoutX="147.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button fx:id="FindNav" layoutX="211.0" layoutY="11.0" mnemonicParsing="false" onAction="#openFindWindow" styleClass="btn-empty" />
+                  <Button fx:id="FindAndReplaceNav" layoutX="285.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Separator layoutX="275.0" layoutY="10.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+                  <Button fx:id="CompileAndRunNav" layoutX="328.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Button fx:id="RunNav" layoutX="446.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+                  <Button fx:id="StopExecutionNav" layoutX="547.0" layoutY="11.0" mnemonicParsing="false" styleClass="btn-empty" />
+              </items>
+            </ToolBar>
+         </center>
+      </BorderPane>
+   </top>
+</BorderPane>

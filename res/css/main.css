@@ -1,0 +1,61 @@
+.btn{
+	-fx-background-color: #00000010;
+	-fx-cursor:hand;
+}
+.btn-empty{
+	-fx-background-color: transparent;
+	-fx-cursor:hand;
+}
+.btn:hover{
+	-fx-background-color: #00000030;
+}
+.btn-empty:hover{
+	-fx-background-color: #00000010;
+}
+
+.keyword {
+    -fx-fill: #9D0EA8;
+    -fx-font-weight: bold;
+}
+.sndkeyword{
+	-fx-fill: #0000ff;
+    -fx-font-weight: bold;
+}
+.semicolon {
+    -fx-font-weight: bold;
+}
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.bracket {
+    -fx-fill: darkgreen;
+    -fx-font-weight: bold;
+}
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+.string {
+    -fx-fill: #42a246;
+}
+.charr {
+    -fx-fill: orange;
+}
+.comment {
+	-fx-fill: cadetblue;
+}
+.operator {
+    -fx-fill: purple;
+}
+.symboles{
+	-fx-font-weight: bold;
+	-fx-fill: red;
+}
+.paragraph-box:has-caret {
+    -fx-background-color: #f2f9fc;
+}
+.select{
+	-fx-fill:#f44336;
+	-fx-font-weight:bold;
+}

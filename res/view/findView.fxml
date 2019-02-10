@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<AnchorPane maxHeight="273.0" maxWidth="333.0" minHeight="273.0" minWidth="333.0" prefHeight="273.0" prefWidth="333.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+   <children>
+      <BorderPane layoutX="-181.0" layoutY="-125.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="32.0" layoutY="42.0" text="Find what" />
+      <TextField layoutX="32.0" layoutY="63.0" prefHeight="25.0" prefWidth="267.0" />
+      <CheckBox layoutX="32.0" layoutY="116.0" mnemonicParsing="false" text="Match whole word only" />
+      <CheckBox layoutX="32.0" layoutY="145.0" mnemonicParsing="false" text="Match case" />
+      <Button layoutX="146.0" layoutY="180.0" mnemonicParsing="false" text="Find" />
+      <Label layoutX="32.0" layoutY="224.0" text="1 match founded" textFill="#57bf6a" />
+   </children>
+</AnchorPane>
