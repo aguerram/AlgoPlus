@@ -1,7 +1,7 @@
 # AlgoPlus
 
 To use this app simply install java JDK in your machine, and open this project with eclipse and run it.
-
+P.S : Instructions always begin with uppercase letter
 You can get a build exmaple from : http://algoplus.ga
 
 # What this app can do ?
