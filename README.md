@@ -32,3 +32,7 @@ Debut
 	
 Fin
 ```
+If you want to change those instructions you can simply go to : /src/compiler/lexical/TokensWords.java and edit them.
+
+If you want to integrate this in a real project or need some help you can contact me by email : agurram2013@gmail.com
+Btw you should consider using other compiler algorithms if you want to get better results like : YACC or LEX, in this example I used my own algorithm.
