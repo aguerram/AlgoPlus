@@ -4,7 +4,7 @@ To use this app simply install java JDK in your machine, and open this project w
 
 You can get a build exmaple from : http://algoplus.ga
 
-#What this app can do ?
+# What this app can do ?
 This is an example of what you can do : 
 
 
